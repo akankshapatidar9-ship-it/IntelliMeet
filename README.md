@@ -16,16 +16,16 @@ IntelliMeet is a full-stack, real-time video conferencing application designed t
 
 ## 📸 Screenshots
 
-<img width="1920" height="1080" alt="Screenshot (175)" src="https://github.com/user-attachments/assets/7b50223c-b857-41d0-ae74-7083ad7281f9" />
+<img width="1920" height="1080" alt="Screenshot (175)" src="https://github.com/user-attachments/assets/25a3e030-c974-46d7-a546-1928cda02838" />
 <p align="center">Dashboard</p>
 <br>
-<img width="1919" height="974" alt="Screenshot 2026-04-13 215422" src="https://github.com/user-attachments/assets/fad28abb-ffe6-4fb9-98cc-708d1e796a48" />
+<img width="1919" height="974" alt="Screenshot 2026-04-13 215422" src="https://github.com/user-attachments/assets/7aa080e5-47c1-4763-bc91-0347f4678544" />
 <p align="center">New Meeting Interface</p>
 <br>
-<img width="1920" height="1080" alt="Screenshot (181)" src="https://github.com/user-attachments/assets/d7ea9bd9-017c-4c5a-9a9a-36e61190abe3" />
+<img width="1920" height="1080" alt="Screenshot (181)" src="https://github.com/user-attachments/assets/0c512270-dc18-4f5e-9ab5-1458f5edb1f2" />
 <p align="center">Meeting Room</p>
 <br>
-<img width="1920" height="1080" alt="Screenshot (176)" src="https://github.com/user-attachments/assets/68367b7b-ee9a-4bcc-82df-2414d00ca7bb" />
+<img width="1920" height="1080" alt="Screenshot (176)" src="https://github.com/user-attachments/assets/442d13a8-891d-4d84-9f11-55a76242c88c" />
 <p align="center">View Transcript and Summary</p>
 <br>
 
