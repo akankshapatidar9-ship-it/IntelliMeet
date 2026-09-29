@@ -1,6 +1,6 @@
 # 🎥 IntelliMeet: AI-Powered Meeting Platform
 
-IntelliMeet is a full-stack, real-time video conferencing application designed to make meetings smarter. Built with React and Spring Boot, it features high-quality video calls, scheduled meetings with automated email invitations, a secure Zoom-style waiting room, and an automated AI pipeline that records audio, generates transcripts, and creates smart meeting summaries.
+IntelliMeet is a full-stack, real-time video conferencing application designed to make meetings smarter. Built with React and Node.js/Express, it features high-quality video calls, scheduled meetings with automated email invitations, a secure waiting room, and an AI pipeline that records audio, generates transcripts, and creates smart meeting summaries.
 
 ---
 
@@ -36,10 +36,8 @@ IntelliMeet is a full-stack, real-time video conferencing application designed t
 
 | Tool | Version |
 |------|---------|
-| Java Development Kit (JDK) | 21 or higher |
-| Node.js & npm | 18.x or higher |
-| MySQL Server | 8.x |
-| Maven | Latest stable |
+| Node.js & npm | 20.x or higher |
+| MongoDB | 7.x or MongoDB Atlas |
 
 ### API Keys Required
 
@@ -54,48 +52,23 @@ You will need to create free developer accounts and obtain API keys for the foll
 
 ### Step-by-Step Execution
 
-#### 1. Database Setup
+#### 1. Backend Setup (Node.js + Express + MongoDB)
 
-Open MySQL Workbench or your CLI and create a new database schema:
-
-```sql
-CREATE DATABASE intellimeet_db;
-```
-
-#### 2. Backend Setup (Spring Boot)
-
-1. Navigate to the `backend` directory.
-2. Open `src/main/resources/application.properties` and fill in your credentials:
-
-```properties
-# MySQL Configuration
-spring.datasource.url=jdbc:mysql://localhost:3306/intellimeet_db
-spring.datasource.username=root
-spring.datasource.password=YOUR_MYSQL_PASSWORD
-
-# Email Configuration
-spring.mail.username=your_email@gmail.com
-spring.mail.password=YOUR_GOOGLE_APP_PASSWORD
-
-# AI API Keys
-gemini.api.key=YOUR_GEMINI_KEY
-assemblyai.api.key=YOUR_ASSEMBLYAI_KEY
-```
-
-3. Run the backend application:
+1. Ensure MongoDB is running locally, or use a MongoDB Atlas connection string.
+2. In `backend-node`, copy `.env.example` to `.env` and set `MONGODB_URI`. Add the AssemblyAI and Gemini keys to enable transcription and summaries. Add SMTP credentials to enable password-reset codes and meeting invitations.
+3. Install dependencies and start the API:
 
 ```bash
-mvn spring-boot:run
+npm install
+npm run dev
 ```
 
-> The backend will start on `http://localhost:8080`
+> Run these commands from the `backend-node` directory. The API starts on `http://localhost:8080`.
 
----
-
-#### 3. Frontend Setup (React + Vite)
+#### 2. Frontend Setup (React + Vite)
 
 1. Navigate to the `frontend` directory.
-2. Create a `.env` file in the root of the frontend folder and add your ZegoCloud credentials:
+2. Copy `.env.example` to `.env` in the frontend folder. It targets the local API by default; add your ZegoCloud credentials:
 
 ```env
 VITE_ZEGO_APP_ID=YOUR_ZEGOCLOUD_APP_ID
@@ -157,13 +130,15 @@ This application handles personal communication data and audio recordings. The f
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | React, Vite |
-| Backend | Spring Boot, Java 21 |
-| Database | MySQL 8 |
+| Frontend | React 19, JavaScript, Vite, Bootstrap |
+| Backend | Node.js, Express, REST APIs |
+| Database | MongoDB, Mongoose |
 | Video/Audio | ZegoCloud WebRTC |
 | Transcription | AssemblyAI |
 | AI Summarization | Google Gemini |
-| Auth & Security | JWT, BCrypt, OTP via Email |
+| Auth & Security | bcrypt password hashing, OTP via Email |
+
+The previous Spring Boot/MySQL backend remains in `backend/` as a legacy reference; the React app should use `backend-node/`. Existing MySQL records are not migrated automatically.
 
 ---
 
